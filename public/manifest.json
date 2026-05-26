@@ -1,0 +1,24 @@
+{
+  "name": "壹念 — 每天清空大脑，聚焦一件事",
+  "short_name": "壹念",
+  "description": "一个基于认知心理学的每日大脑清空+聚焦练习。不是待办清单，不是效率工具。",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fafaf9",
+  "theme_color": "#fafaf9",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icon-192.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

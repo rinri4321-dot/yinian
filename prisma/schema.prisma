@@ -1,0 +1,53 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model DailyRecord {
+  id           String   @id @default(cuid())
+  date         DateTime @unique
+
+  brainDump    String?
+  dumpAnalysis String?
+
+  oneThing     String?
+  oneThingWhy  String?
+
+  intentTime   String?
+  intentPlace  String?
+  intentFull   String?
+
+  focusMinutes  Int     @default(0)
+  focusSessions Int     @default(0)
+  oneThingDone  String?
+
+  reviewDone1   String?
+  reviewBetter  String?
+  reviewNextOne String?
+
+  moodScore     Int?
+
+  createdAt    DateTime @default(now())
+}
+
+model WeeklyInsight {
+  id          String   @id @default(cuid())
+  weekStart   DateTime
+  weekEnd     DateTime
+  insightText String
+  createdAt   DateTime @default(now())
+}
+
+model User {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  passwordHash String
+  name         String
+  avatar       String?
+  bio          String?
+  createdAt    DateTime @default(now())
+}
