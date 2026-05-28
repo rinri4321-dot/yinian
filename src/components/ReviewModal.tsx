@@ -56,7 +56,7 @@ export default function ReviewModal({ isOpen, onClose, onSubmit }: Props) {
             <textarea
               value={done1}
               onChange={(e) => setDone1(e.target.value)}
-              className="w-full rounded-lg border border-[var(--border)] p-3 text-sm focus:border-[var(--fg-muted)] focus:outline-none"
+              className="w-full rounded-lg border border-[var(--border)] bg-[var(--bg)] p-3 text-sm focus:border-[var(--fg-muted)] focus:outline-none"
               rows={2}
               placeholder="哪怕是很小的事…"
             />
@@ -69,7 +69,7 @@ export default function ReviewModal({ isOpen, onClose, onSubmit }: Props) {
             <textarea
               value={better}
               onChange={(e) => setBetter(e.target.value)}
-              className="w-full rounded-lg border border-[var(--border)] p-3 text-sm focus:border-[var(--fg-muted)] focus:outline-none"
+              className="w-full rounded-lg border border-[var(--border)] bg-[var(--bg)] p-3 text-sm focus:border-[var(--fg-muted)] focus:outline-none"
               rows={2}
               placeholder="不是自我批评，是学习…"
             />
@@ -82,7 +82,7 @@ export default function ReviewModal({ isOpen, onClose, onSubmit }: Props) {
             <input
               value={nextOne}
               onChange={(e) => setNextOne(e.target.value)}
-              className="w-full rounded-lg border border-[var(--border)] p-3 text-sm focus:border-[var(--fg-muted)] focus:outline-none"
+              className="w-full rounded-lg border border-[var(--border)] bg-[var(--bg)] p-3 text-sm focus:border-[var(--fg-muted)] focus:outline-none"
               placeholder="提前想好，明天少一个决策"
             />
           </div>
@@ -109,7 +109,7 @@ export default function ReviewModal({ isOpen, onClose, onSubmit }: Props) {
                   }`}
                 >
                   <span className="text-xl">{emoji}</span>
-                  <span className={`text-xs ${mood === score ? "text-[var(--fg-subtle)]" : "text-[var(--fg-subtle)]"}`}>
+                  <span className={`text-xs ${mood === score ? "text-[var(--bg)]" : "text-[var(--fg-subtle)]"}`}>
                     {label}
                   </span>
                 </button>

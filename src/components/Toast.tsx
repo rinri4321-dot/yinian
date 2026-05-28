@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { CheckCircle2 } from "lucide-react"
 
 interface Props {
@@ -11,17 +11,22 @@ interface Props {
 
 export default function Toast({ message, show, onDone }: Props) {
   const [visible, setVisible] = useState(false)
+  const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
+  const onDoneRef = useRef(onDone)
+  onDoneRef.current = onDone
 
   useEffect(() => {
-    if (show) {
-      setVisible(true)
-      const t = setTimeout(() => {
-        setVisible(false)
-        setTimeout(onDone, 300)
-      }, 1800)
-      return () => clearTimeout(t)
+    if (!show) return
+    setVisible(true)
+    const outer = setTimeout(() => {
+      setVisible(false)
+      timerRef.current = setTimeout(() => onDoneRef.current(), 300)
+    }, 1800)
+    return () => {
+      clearTimeout(outer)
+      if (timerRef.current) clearTimeout(timerRef.current)
     }
-  }, [show, onDone])
+  }, [show])
 
   if (!show && !visible) return null
 

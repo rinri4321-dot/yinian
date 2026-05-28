@@ -4,8 +4,8 @@
   "description": "一个基于认知心理学的每日大脑清空+聚焦练习。不是待办清单，不是效率工具。",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#fafaf9",
-  "theme_color": "#fafaf9",
+  "background_color": "#1a1a18",
+  "theme_color": "#1a1a18",
   "orientation": "portrait-primary",
   "icons": [
     {

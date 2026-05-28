@@ -41,7 +41,7 @@ export default function RegisterPage() {
           <Sparkles className="h-7 w-7 text-[#eb9a4a]" />
         </div>
         <h1 className="text-[1.75rem] font-semibold tracking-tight text-[var(--fg)]">创建账号</h1>
-        <p className="mt-2 text-[15px] text-[var(--fg-muted)]">开始你的一念之旅</p>
+        <p className="mt-2 text-[15px] text-[var(--fg-muted)]">开始你的壹念之旅</p>
       </div>
 
       <form onSubmit={handleSubmit} className="space-y-4">

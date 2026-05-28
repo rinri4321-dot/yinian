@@ -342,7 +342,10 @@ export default function TodayContent() {
             value={content}
             onChange={(e) => setContent(e.target.value)}
             className="min-h-[240px] w-full rounded-2xl border border-[var(--border)] bg-[var(--bg-card)] p-4 text-[15px] leading-relaxed shadow-sm placeholder:text-[var(--fg-subtle)] focus:border-[var(--fg-muted)] focus:outline-none"
-            placeholder="比如：要做PPT但完全没头绪\n担心下周的汇报\n该给妈妈打电话了\n想学编程但不知道从哪开始"
+            placeholder={`比如：要做PPT但完全没头绪
+担心下周的汇报
+该给妈妈打电话了
+想学编程但不知道从哪开始`}
             autoFocus
           />
           <button onClick={handleDump} disabled={!content.trim() || analyzing}

@@ -5,7 +5,10 @@ import SWRegister from "@/components/SWRegister"
 import ThemeProvider from "@/components/ThemeProvider"
 
 export const metadata: Metadata = {
-  title: "壹念 — 每天清空大脑，聚焦一件事",
+  title: {
+    default: "壹念 — 每天清空大脑，聚焦一件事",
+    template: "%s — 壹念",
+  },
   description: "一个基于认知心理学的每日大脑清空+聚焦练习。不是待办清单，不是效率工具。",
   icons: { icon: "/favicon.svg", apple: "/icon-192.svg" },
   manifest: "/manifest.json",
@@ -16,7 +19,10 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   maximumScale: 1,
-  themeColor: "#fafaf9",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#f5f1eb" },
+    { media: "(prefers-color-scheme: dark)", color: "#1a1a18" },
+  ],
 }
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
